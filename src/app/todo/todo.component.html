@@ -1,0 +1,28 @@
+<div class="container">
+  <p *ngIf="todos.length === 0">Opps, non ci sono Task</p>
+
+  <ul>
+    <li *ngFor="let todo of todos">
+      <input *ngIf="todo.editing" [(ngModel)]="todo.title" />
+      <span *ngIf="!todo.editing">{{ todo.title }}</span>
+      <button (click)="editTodo(todo)">
+        {{ todo.editing ? "Save" : "Edit" }}
+      </button>
+      <fa-icon
+        class="complete-icon"
+        [icon]="faCheckCircle"
+        (click)="completeTodo(todo)"
+      ></fa-icon>
+      <fa-icon
+        class="delete-icon"
+        [icon]="faTimes"
+        (click)="deleteTodo(todo)"
+      ></fa-icon>
+    </li>
+  </ul>
+
+  <div class="input-group">
+    <input [(ngModel)]="newTodoTitle" placeholder="Aggiungi un nuovo todo" />
+    <button (click)="addTodo()">+</button>
+  </div>
+</div>

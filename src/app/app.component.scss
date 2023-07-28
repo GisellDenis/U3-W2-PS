@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px gray;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    color: yellow;
+    transform: scale(1.1);
+  }
+  
+  nav a.active {
+    color: purple;
+    border-bottom: 3px solid white;
+  }

@@ -1,0 +1,14 @@
+<div class="container">
+  <div *ngIf="loading">Loading...</div>
+
+  <ul *ngIf="!loading">
+    <li *ngFor="let todo of completedTodos">
+      {{ todo.title }}
+      <fa-icon
+        class="delete-icon"
+        [icon]="faTimes"
+        (click)="deleteTodo(todo)"
+      ></fa-icon>
+    </li>
+  </ul>
+</div>
